@@ -165,6 +165,79 @@ if (score1 == score2) {
 
 // Lesson: functions
 
+/*function calculationAge(yearOfBrith) {
+    var age = 2016 - yearOfBrith;
+    return age;
+}
+
+var ageJohn = calculationAge(1990);
+var ageMark = calculationAge(1969);
+var ageMery = calculationAge(1948);
+
+
+
+function yearsUntilRetirement(name, year) {
+    var age = calculationAge(year);
+    var retirement = 65 - age;
+    if (retirement >= 0) {
+        console.log(name + ' retires in ' + retirement + ' years.');
+    } else {
+         console.log(name + ' is alredy retired for ' + retirement + ' years');
+    }
+
+}
+
+yearsUntilRetirement('John', 1990);
+yearsUntilRetirement('Mark', 1969);
+yearsUntilRetirement('Mery', 1948);*/
+
+
+// Lesson: arrays
+
+var names = ['John', 'Jane', 'Mark'];
+var years = new Array(1990, 1969, 1948);
+
+console.log(names[2]);
+
+names[1] = 'Ben';
+console.log(names);
+
+var john = ['John', 'Smith', 1990, 'designer', false];
+
+
+john.push('blue');
+john.unshift('Mr.');
+john.pop();
+john.shift();
+
+
+
+console.log(john);
+
+
+/******************/
+//kiedy w indexOf jako paramet wpiszemy coś czego nie ma w tablicy 
+//to zawsze zwraca wartość -1
+//
+/******************/
+
+
+
+if (john.indexOf('teather') === -1) {
+    console.log('John is not a teacher');
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
