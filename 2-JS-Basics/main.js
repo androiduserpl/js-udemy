@@ -194,7 +194,7 @@ yearsUntilRetirement('Mery', 1948);*/
 
 // Lesson: arrays
 
-var names = ['John', 'Jane', 'Mark'];
+/*var names = ['John', 'Jane', 'Mark'];
 var years = new Array(1990, 1969, 1948);
 
 console.log(names[2]);
@@ -212,7 +212,7 @@ john.shift();
 
 
 
-console.log(john);
+console.log(john);*/
 
 
 /******************/
@@ -222,16 +222,44 @@ console.log(john);
 /******************/
 
 
+/*
 
 if (john.indexOf('teather') === -1) {
     console.log('John is not a teacher');
 }
+*/
 
+// Lesson: Objects
 
+var john = {
+    name: 'John',
+    lastName: 'Smith',
+    yearOfBrith: 1990, 
+    job: 'teather',
+    isMaried: false
+};
 
+console.log(john); 
+console.log(john.lastName); 
+console.log(john['lastName']); 
 
+var xyz = 'job';
+console.log(john[xyz]);
 
+john.lastName = 'Miller';
+john['job'] = 'programer';
 
+console.log(john);
+
+var jane = new Object();
+
+jane.name = 'Jane';
+jane.lastName = 'Smith';
+jane['yearOfBrith'] = 1969;
+jane['job'] = 'retierd';
+jane['isMarried'] = true;
+
+console.log(jane);
 
 
 
