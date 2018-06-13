@@ -384,6 +384,13 @@ for (i = 0; i < empty.length; i++) {
 };
 */
 
+/*******************************/
+/****ALWAYS A COURRENT YEAR*****/
+/*******************************/
+
+
+var currentYear = new Date().getFullYear();
+console.log('Current year is ' + currentYear + ' AD.');
 
 
 function printFullAge(yearOfBorn) {
@@ -391,7 +398,7 @@ function printFullAge(yearOfBorn) {
     var fullAge = [];
 
     for (var i = 0; i < yearOfBorn.length; i++) {
-        empty[i] = 2018 - yearOfBorn[i];
+        empty[i] = currentYear - yearOfBorn[i];
     }
 
     for (i = 0; i < empty.length; i++) {
