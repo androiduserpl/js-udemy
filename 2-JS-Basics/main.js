@@ -231,7 +231,7 @@ if (john.indexOf('teather') === -1) {
 
 // Lesson: Objects
 
-var john = {
+/*var john = {
     name: 'John',
     lastName: 'Smith',
     yearOfBrith: 1990, 
@@ -259,16 +259,157 @@ jane['yearOfBrith'] = 1969;
 jane['job'] = 'retierd';
 jane['isMarried'] = true;
 
-console.log(jane);
+console.log(jane);*/
+
+// Lesson: Objects & methods
+
+
+//v1.0
+/*var john = {
+    name: 'John',
+    lastName: 'Smith',
+    yearOfBrith: 1990, 
+    job: 'teather',
+    isMaried: false,
+    family: ['Jane', 'Mark', 'Bob'],
+    calculateAge: function (yearOfBrith) {
+        return 2016 - this.yearOfBrith;
+    }
+};
+
+console.log(john.calculateAge());
+
+var age = john.calculateAge();
+
+john.age = age;
+
+console.log(john.age);*/
+
+
+//v2.0
+/*
+var john = {
+    name: 'John',
+    lastName: 'Smith',
+    yearOfBrith: 1990, 
+    job: 'teather',
+    isMaried: false,
+    family: ['Jane', 'Mark', 'Bob'],
+    calculateAge: function (yearOfBrith) {
+        this.age = 2016 - yearOfBrith;
+    }
+};
+
+var mike = {
+    yearOfBrith: 1950, 
+    calculateAge: function () {
+        this.age = 2016 - this.yearOfBrith;
+    }
+};
+
+mike.calculateAge();
+console.log(mike);
+
+*/
+
+// lesson: loops
+
+/*
+for (var i = 0; i < 10; i++) {
+    console.log(i);
+}
+*/
+
+var names = ['John', 'Jane', 'Mary', 'Mark', 'Bob'];
+
+/*
+for (var i = 0; i < names.length; i++) {
+    console.log(names[i]);
+}
+
+for (var i = names.length - 1; i >= 0; i--) {
+    console.log(names[i]);
+}
+*/
+
+
+/*var i = 0;
+while(i < names.length) {
+    console.log(names[i]);
+    i++;
+}*/
+
+
+/*
+for (var i = 1; i <= 5; i++) {
+    console.log(i);
+    
+    if (i === 3) {
+        break;
+    }
+}
 
 
 
 
+console.log('.............');
+
+for (var i = 1; i <= 5; i++) {
+    
+    if (i === 3) {
+        continue;
+    }
+    console.log(i);
+}
+
+*/
 
 
 
+// chalange
+
+/*
+for (i = 0; i < yearOfBorn.length; i++) {
+    empty.push(yearOfBorn[i]);
+};
+console.log(empty);
+
+for (i = 0; i < empty.length; i++) {
+
+    var age = 2018 - empty[i];
+
+    if (age >= 18) {
+        console.log('born in ' + empty[i] + ' he is adault & he is ' + age + ' years old');
+    };
+};
+*/
 
 
+
+function printFullAge(yearOfBorn) {
+    var empty = [];
+    var fullAge = [];
+
+    for (var i = 0; i < yearOfBorn.length; i++) {
+        empty[i] = 2018 - yearOfBorn[i];
+    }
+
+    for (i = 0; i < empty.length; i++) {
+        if (empty[i] >= 18) {
+            console.log('Person ' + (i + 1) + ' age is ' + empty[i] + ' years old, and is of full age.');
+            fullAge.push(true);
+        } else {
+            console.log('Person ' + (i + 1) + ' age is ' + empty[i] + ' years old, and is NOT of full age.');
+            fullAge.push(false);
+        }
+    }
+    return fullAge
+}
+
+var yearOfBorn = [1990, 2001, 1870, 2000, 1945];
+
+var full_1 = printFullAge(yearOfBorn);
+var full_2 = printFullAge([2000, 1952, 1644, 1990]);
 
 
 
