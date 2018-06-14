@@ -1,16 +1,21 @@
 ///////////////////////////////////////
 // Lecture: Hoisting
 
+calculateAge(1965);
 
+function calculateAge(year) {
+    console.log(2016 - year);
+}
 
+console.log(age);
+var age = 32;
 
-
-
-
-
-
-
-
+function foo() {
+    var age = 65;
+    console.log(age);
+}
+foo();
+console.log(age)
 
 
 
@@ -72,8 +77,8 @@ function third() {
 
 
 
-var currentYear = new Date().getFullYear();
-console.log(currentYear);
+//var currentYear = new Date().getFullYear();
+//console.log(currentYear);
 
 
 
