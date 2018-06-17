@@ -15,7 +15,7 @@ function foo() {
     console.log(age);
 }
 foo();
-console.log(age)
+console.log(age);
 
 
 
