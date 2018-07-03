@@ -15,7 +15,7 @@ console.log(fulAge);
 */
 
 //Lesson: varibles 2
-/*var name = 'John';
+/*var name = 'John';-
 var age = 26;
 
 //console.log(name + age);
