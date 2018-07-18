@@ -17,3 +17,20 @@
     text-align: center;
     padding: 10px;
 }
+.ans {
+    display: inline-block;
+    text-align: center;
+    color: azure;
+    background-color: #4827b2;
+    width: 30%;
+    height: auto;
+    padding: 10px;
+    margin: auto;
+    border: solid 1px #000;
+}
+
+#answer {
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+}
