@@ -21,6 +21,7 @@ window.onload = function () {
                 //console.log(i + ': ' + this.answers[i]);
                 //zamiast w konsoli uzupełnia divy w html
                 document.getElementById('ans-' + (i + 1)).textContent = this.answers[i];
+                document.getElementById('ans-' + (i + 1)).setAttribute('data-value', i);
             }
 
         };
@@ -28,8 +29,11 @@ window.onload = function () {
         Question.prototype.checkAnswer = function (ans) {
             if (ans === this.correct) {
                 console.log('correct answer!');
+                document.getElementById('game').style.backgroundColor = 'green';
             } else {
                 console.log('WRONG!!!');
+                document.getElementById('game').style.backgroundColor = 'red';
+                document.getElementById('yep').textContent = ('NOOO!!')
             }
         };
 
@@ -48,32 +52,27 @@ window.onload = function () {
         var n = Math.floor(Math.random() * questions.length);
 
         questions[n].displayQuestion();
-        
+
         //funkcja do pobrania id odpowiedzi
         //ogólnie jest do bani, coś klika tam...
         //potrzeba tak by 'diva' który jest kliknięty brał jego nr żeby wykorzystać to później jako nr odpowiedzi.
-        
-/*        Question.prototype.getClick = function() {
-                document.querySelector('.ans').addEventListener('click', function() {
-                    var dupa = document.querySelector('.ans').value;
-                    console.log(dupa);
-                })
+
+        Question.prototype.initClicks = function() {
+            var elements = document.querySelectorAll('.ans'), self = this, i;
+            for (i = 0; i < elements.length; ++i) {
+                elements[i].addEventListener('click', function(event) {
+                    var ans = event.target.getAttribute('data-value');
+                    self.checkAnswer(parseInt(ans));
+                });
+            }
         };
-        */
-        var answer = parseInt(prompt('Choose wisely the number!'));
+
+        //var answer = parseInt(prompt('Choose wisely the number!'));
 
         //questions[n].checkAnswer(answer);
-        //questions[n].getClick();
+        questions[n].initClicks();
     })();
 };
 
-
-
-
-
-
-
-
-
-//wrzucenie w html 
+//wrzucenie w html
 //document.getElementById('answer').textContent = n;
