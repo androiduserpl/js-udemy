@@ -157,7 +157,7 @@ var UIControler = (function () {
         expensesLabel: '.budget__expenses--value',
         percentLabel: '.budget__expenses--percentage',
         container: '.container',
-        expensesPercLabel: 'item__percentage',
+        expensesPercLabel: '.item__percentage',
         dateLabel: '.budget__title--month',
     }
 
@@ -268,7 +268,7 @@ var UIControler = (function () {
         },
 
         displayMonth: function () {
-            var now, year, month, months, test;
+            var now, year, month, months;
 
             now = new Date();
 
@@ -276,9 +276,7 @@ var UIControler = (function () {
 
             month = now.getMonth();
             year = now.getFullYear();
-
-            test = now.getMinutes() + ' ' + now.getSeconds();
-            console.log(test);
+            
             document.querySelector(DOMStrings.dateLabel).textContent = months[month] + ' ' + year;
 
         },
