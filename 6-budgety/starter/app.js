@@ -159,7 +159,7 @@ var UIControler = (function () {
         container: '.container',
         expensesPercLabel: '.item__percentage',
         dateLabel: '.budget__title--month',
-    }
+    };
 
     var formatNumber = function (num, type) {
         var num, numSplit, int, dec, type, sign;
@@ -316,10 +316,12 @@ var controller = (function (budgetCtrl, UICtrl) {
 
         document.addEventListener('keypress', function (event) {
 
-            if (event.keyCode === 13 || event.which === 13) {
+            if (event.keyCode === 13 || event.which === 17) {
                 crtlAddItem();
+                console.log('tada');
             }
         });
+        
 
         document.querySelector(DOM.container).addEventListener('click', crtlDeleteItem);
 
