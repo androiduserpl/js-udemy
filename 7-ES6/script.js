@@ -373,10 +373,17 @@ const all = [h, ...boxes];
 Array.from(all).forEach(cur => cur.style.color = '#ff00ff');
 */
 
+/////////////
+// Lecture: Rest parameters
 
 
+// ES5
 
+function isFullAges5() {
+    console.log(arguments);
+}
 
+isFullAges5(1990, 1999, 1965);
 
 
 
