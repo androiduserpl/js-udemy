@@ -379,17 +379,40 @@ Array.from(all).forEach(cur => cur.style.color = '#ff00ff');
 
 // ES5
 
-function isFullAges5() {
-    console.log(arguments);
+
+function isFullAges5(limit) {
+    //console.log(arguments);
+
+    var argsArr = Array.prototype.slice.call(arguments);
+
+    argsArr.forEach(function(cur) {
+        console.log((2016 - cur) >= 18);
+    })
 }
 
 isFullAges5(1990, 1999, 1965);
 
 
 
-
-
-
+//// ES6
+//
+//function isFullAges6(...years) {
+//
+//    years.forEach(cur => console.log((2016 - cur) >= 18));
+//}
+//
+//isFullAges6(1990, 1999, 1965);
+//
+//
+//function isFullAges5() {
+//    //console.log(arguments);
+//
+//    var argsArr = Array.prototype.slice.call(arguments);
+//
+//    argsArr.forEach(function(cur) {
+//        console.log((2016 - cur) >= 18);
+//    })
+//}
 
 
 
