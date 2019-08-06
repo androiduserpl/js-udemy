@@ -143,6 +143,7 @@ console.log(ages6);
 // ES5
 
 //trzeba zdeklarować wcześniej var self = this; żeby funkcja clickMe mogła się odnosić do informacji z wcześniej
+/*
 
 var box5 = {
     color: 'green',
@@ -156,6 +157,7 @@ var box5 = {
         });
     }
 }
+*/
 
 //box5.clickMe();
 
