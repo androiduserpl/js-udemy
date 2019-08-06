@@ -145,7 +145,7 @@ console.log(ages6);
 //trzeba zdeklarować wcześniej var self = this; żeby funkcja clickMe mogła się odnosić do informacji z wcześniej
 /*
 
-var box5 = {
+/*var box5 = {
     color: 'green',
     position: 1,
     clickMe: function () {
@@ -156,8 +156,12 @@ var box5 = {
             alert(str);
         });
     }
-}
-*/
+//<<<<<<< HEAD
+//}
+//*/
+//=======
+//}*/
+//>>>>>>> origin/master
 
 //box5.clickMe();
 
@@ -274,18 +278,189 @@ console.log(retirement);
 /////////////
 // Lecture: Arrays in ES6 / ES2015
 
+
+/*
 const boxes = document.querySelectorAll('.box');
 
 // ES5
 
+//
+//var boxesArr5 = Array.prototype.slice.call(boxes);
+//boxesArr5.forEach(function (cur) {
+//    cur.style.backgroundColor = '#00ff45';
+//});
 
-var boxesArr5 = Array.prototype.slice.call(boxes);
-boxesArr5.forEach(function(cur) {
-    cur.style.backgroundColor = '#00ff45';
+const boxesArr6 = Array.from(boxes);
+boxesArr6.forEach(cur => cur.style.backgroundColor = '#9e34ac');
+
+
+// ES5
+
+/*for (var i = 0; i < boxesArr5.length; i++) {
+
+    if (boxesArr5[i].className === 'box blue') {
+        continue;
+    }
+
+    boxesArr5[i].textContent = 'I changed to blue!';
+
+}
+
+// ES6
+
+for (const cur of boxesArr6) {
+    if (cur.className.includes('blue')) {
+        continue;
+    }
+
+    cur.textContent = 'I changed to blue!';
+
+}
+
+
+// ES5
+
+var ages = [12, 17, 8, 21, 14, 11];
+
+var full = ages.map(function(cur) {
+    return cur >= 18;
 });
 
+console.log(full);
+
+console.log(full.indexOf(true));
+console.log(ages[full.indexOf(true)]);
 
 
+// ES6
+
+console.log(ages.findIndex(cur => cur >= 18));
+console.log(ages.find(cur => cur >= 18));
+*/
+
+
+/////////////
+// Lecture: Spread operator
+/*
+
+
+function addFourAges (a, b, c, d) {
+    return a + b + c + d;
+}
+
+var sum1 = addFourAges(18,30,12,21);
+
+console.log(sum1);
+
+// ES5
+
+var ages = [18, 30, 12, 21];
+var sum2 = addFourAges.apply(null, ages);
+
+console.log(sum2);
+
+
+// ES6
+
+const sum3 = addFourAges(...ages);
+console.log(sum3)
+
+const familySmith = ['Jochn', 'Jane', 'Mark'];
+const familyMiller = ['Mary', 'Boob', 'Ann'];
+const bigFamily = [...familySmith, ...familyMiller];
+
+console.log(bigFamily);
+
+
+const h = document.querySelector('h1');
+const boxes = document.querySelectorAll('.box');
+const all = [h, ...boxes];
+
+Array.from(all).forEach(cur => cur.style.color = '#ff00ff');
+*/
+
+/////////////
+// Lecture: Rest parameters
+
+
+// ES5
+
+/*
+
+function isFullAges5(limit) {
+    //console.log(arguments);
+
+    var argsArr = Array.prototype.slice.call(arguments);
+
+    argsArr.forEach(function(cur) {
+        console.log((2016 - cur) >= 18);
+    })
+}
+
+isFullAges5(1990, 1999, 1965);
+*/
+
+
+
+//// ES6
+//
+//function isFullAges6(...years) {
+//
+//    years.forEach(cur => console.log((2016 - cur) >= 18));
+//}
+//
+//isFullAges6(1990, 1999, 1965);
+//
+//
+//function isFullAges5() {
+//    //console.log(arguments);
+//
+//    var argsArr = Array.prototype.slice.call(arguments);
+//
+//    argsArr.forEach(function(cur) {
+//        console.log((2016 - cur) >= 18);
+//    })
+//}
+
+
+/////////////
+// Lecture: Default parameters
+
+
+// ES6
+
+/*function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
+
+
+    lastName === undefined ? lastName = 'Smith' : lastName = lastName;
+    nationality === undefined ? nationality = 'American' : nationality = nationality;
+
+
+    this.firstName = firstName;
+    this.yearOfBrith = yearOfBirth;
+    this.lastName = lastName;
+    this.nationality = nationality;
+}*/
+
+
+// ES6
+/*
+
+function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = 'american') {
+    this.firstName = firstName;
+    this.yearOfBrith = yearOfBirth;
+    this.lastName = lastName;
+    this.nationality = nationality;
+}
+
+var john = new SmithPerson('John', 1990);
+
+var emily = new SmithPerson('Emily', 1983, 'Diaz', 'Spanish');
+*/
+
+
+/////////////
+// Lecture: Maps
 
 
 
