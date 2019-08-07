@@ -461,7 +461,6 @@ var emily = new SmithPerson('Emily', 1983, 'Diaz', 'Spanish');
 
 /////////////
 // Lecture: Maps
-
 /*
 const question = new Map();
 question.set('question', 'what is offical name of the latest major JavaScript version?');
@@ -481,13 +480,14 @@ if (question.has(4)) {
     question.delete(4);
     console.log('answer 4 is here')
 
-}
+}*/
 
 //question.clear();
 
 
 //question.forEach((value, key) => console.log(`This is ${key}, and it's set to ${value}`));
 
+/*
 for (let [key, value] of question.entries()) {
     //console.log(`This is ${key}, and it's set to ${value}`)
     if (typeof(key) === 'number') {
