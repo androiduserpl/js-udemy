@@ -508,6 +508,7 @@ console.log(question.get( ans === question.get('correct')));
 
 // ES5
 
+/*
 var Person5 = function (name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
@@ -533,19 +534,97 @@ class Person6 {
     }
 
     calculateAge() {
-        var age = new Date().getFullYear - this.yerOfBirth;
+        var age = new Date().getFullYear() - this.yerOfBirth;
         console.log(age);
     }
 
     static greeting() {
         console.log('hej there!');
     }
-
 }
 
 const john6 = new Person6('John', 1990, 'nauczyciel');
 
 Person6.greeting();
+*/
+
+
+/////////////
+// Lecture: Classes with Subclasses
+
+/*
+// ES5
+var Person5 = function (name, yearOfBrith, job) {
+    this.name = name;
+    this.yearOfBrith = yearOfBrith;
+    this.job = job;
+}
+
+Person5.prototype.calculateAge =
+    function() {
+        var age = new Date().getFullYear() - this.yearOfBrith;
+        console.log(age);
+    }
+var Athletr5 = function(name, yearOfBrith, job, olympicGames, medals)
+{
+    Person5.call(this, name, yearOfBrith, job);
+    this.olympicGames = olympicGames;
+    this.medals = medals;
+}
+
+
+Athletr5.prototype = Object.create(Person5.prototype);
+
+Athletr5.prototype.wonMedal = function() {
+    this.medals++;
+    console.log(this.medals);
+}
+
+var jonAthlete5 = new Athletr5('John', 1990, 'Swimer', 3, 10);
+
+jonAthlete5.calculateAge();
+jonAthlete5.wonMedal();
+*/
+
+
+// ES6
+
+class Person6 {
+    constructor(name, yearOfBirth, job) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.job = job;
+    }
+
+    calculateAge() {
+        var age = new Date().getFullYear() - this.yearOfBirth;
+        console.log(age);
+    }
+
+}
+
+class Athlete6 extends Person6 {
+    constructor(name, yearOfBirth, job, olympicGames, medals) {
+        super(name, yearOfBirth, job);
+        this.olympicGames = olympicGames;
+        this.medals = medals;
+    }
+
+    wonMedal() {
+        this.medals++;
+        console.log(this.medals);
+    }
+}
+
+const johnAthlete6 = new Athlete6('Adrian', 1900, 'swimer', 3, 10);
+
+johnAthlete6.wonMedal();
+johnAthlete6.calculateAge();
+
+
+
+
+
 
 
 
